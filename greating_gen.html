@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Greeting Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+
+        #flower {
+            font-size: 50px;
+ 
+        }
+    </style>
+</head>
+<body>
+    <h1>Greeting Generator</h1>
+    <form onsubmit="generateGreeting(event)">
+        <label for="name">Enter your name: </label>
+        <input type="text" id="name" required>
+        <button type="submit">Generate Greeting</button>
+    </form>
+    <p id="greeting"></p>
+
+    <script>
+        function generateGreeting(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value;
+            const flowerEmoji = '🌸';
+            const greeting = `Happy Exmass and Prosperous New Year, ${name}! ${flowerEmoji}`;
+            document.getElementById('greeting').innerHTML = `<span id="flower">${flowerEmoji}</span> ${greeting} <span id="flower">${flowerEmoji}</span>`;
+        }
+    </script>
+</body>
+</html>
